@@ -28,12 +28,12 @@ exports.deleteWorker = (req, res) => {
 
 exports.getOneWorker = (req, res) => {
     Worker.findOne({ _id: req.params.id })
-    .then(thing => res.status(200).json(thing))
+    .then(worker => res.status(200).json(worker))
     .catch(error => res.status(404).json({ error }));
 }
 
 exports.getAllWorker = (req, res) => {
     Worker.find()
-    .then(things => res.status(200).json(things))
+    .then(workers => res.status(200).json(workers))
     .catch(error => res.status(400).json({ error }));
 }

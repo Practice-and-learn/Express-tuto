@@ -49,7 +49,7 @@ exports.getOneMovie = (req, res, next) => {
     //     }
     //     console.log(MovieWithWorker);
     //   })
-    .then(thing => res.status(200).json(thing))
+    .then(movie => res.status(200).json(movie))
     .catch(error => res.status(404).json({ error }));
 }
 
@@ -57,6 +57,6 @@ exports.getAllMovie = (req, res, next) => {
     // .find() permet de récuperer les items de notre bdd
     //Ont peux également lui rajouter des params pour filtrer la récuperation
     Movie.find()
-    .then(things => res.status(200).json(things))
+    .then(movies => res.status(200).json(movies))
     .catch(error => res.status(400).json({ error }));
 }

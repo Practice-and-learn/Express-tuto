@@ -1,7 +1,7 @@
 const express = require('express'); 
 const app = express(); 
 const mongoose = require('mongoose');
-
+const bodyParser = require('body-parser');
 //appel des routes
 const userRoutes = require('./routes/user');
 const movieRoutes = require('./routes/movie');
@@ -21,6 +21,8 @@ mongoose.connect('mongodb+srv://apiMovie:RhO2qmY4ge1E9pr4@movieapp.oahfynn.mongo
 
 
   app.use(express.json());
+  app.use(bodyParser.json());
+
   //app.use permet de créer un middleware qui sera éfféctif dans toute l'application
   //le setHeader permet d'ajouter un header à la requête et d'autoriser les requêtes cross-origin
   app.use((req, res, next) => {
